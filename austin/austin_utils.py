@@ -1,7 +1,13 @@
+import math
+
 from prettytable import PrettyTable
 
+MAX_LINE_LENGTH = 90
 
 def split_sentence_to_lines(sentence, max_len):
+    if len(sentence) <= max_len:
+        return ['- ' + sentence]
+
     lines = []
     line = None
     tokens = sentence.split(' ')
@@ -13,7 +19,7 @@ def split_sentence_to_lines(sentence, max_len):
                 line += ' ' + token
             else:
                 lines.append(line)
-                line = token
+                line = '  ' + token
     if line is not None:
         lines.append(line)
     return lines
@@ -36,12 +42,10 @@ def print_results_in_a_table(result, n_sentences_per_kp, title, one_line_sentenc
         table.add_row([i, kp, len(matches), ''])
         sentences = [match['sentence_text'] for match in matches]
         if one_line_sentences_only:
-            sentences = [sentence for sentence in sentences if len(sentence) <= 65]
+            sentences = [sentence for sentence in sentences if len(sentence) <= MAX_LINE_LENGTH]
         sentences = sentences[1:(n_sentences_per_kp+1)]  # first sentence is the kp itself
         for sentence in sentences:
-            lines = ['- ' + sentence]
-            if len(sentence) > 65:
-                lines = split_sentence_to_lines(sentence, 65)
+            lines = split_sentence_to_lines(sentence, MAX_LINE_LENGTH)
             for line in lines:
                 table.add_row(['', '', '', line])
     print(title + ' coverage: %.2f' % ((float(matched_sentences) / float(total_sentences)) * 100.0))
@@ -68,24 +72,18 @@ def print_results(result, n_sentences_per_kp, title, one_line_sentences_only=Fal
 
         sentences = [match['sentence_text'] for match in matches]
         if one_line_sentences_only:
-            sentences = [sentence for sentence in sentences if len(sentence) <= 65]
+            sentences = [sentence for sentence in sentences if len(sentence) <= MAX_LINE_LENGTH]
         sentences = sentences[1:(n_sentences_per_kp + 1)]  # first sentence is the kp itself
-        lines.extend(get_pretty_lines(sentences))
+        lines.extend(split_sentences_to_lines(sentences, 1))
     print(title + ' coverage: %.2f' % ((float(matched_sentences) / float(total_sentences)) * 100.0))
     print(title + ' key points:')
     print('\n'.join(lines))
 
-
-def get_pretty_lines(sentences):
+def split_sentences_to_lines(sentences, n_tabs):
     lines = []
     for sentence in sentences:
-        if len(sentence) > 65:
-            sentence_splitted = split_sentence_to_lines(sentence, 65)
-            lines.extend('\t{}'.format(line) for line in sentence_splitted)
-        else:
-            lines.append('\t- {}'.format(sentence))
-    return lines
-
+        lines.extend(split_sentence_to_lines(sentence, MAX_LINE_LENGTH))
+    return [('\t' * n_tabs) + line for line in lines]
 
 def print_top_and_bottom_matches_for_kp(result, kp_to_print, top_k, bottom_k):
     for i, keypoint_matching in enumerate(result['keypoint_matchings']):
@@ -99,11 +97,11 @@ def print_top_and_bottom_matches_for_kp(result, kp_to_print, top_k, bottom_k):
 
         print('Top %d matches:' % top_k)
         sentences = [match['sentence_text'] for match in top_k_matches]
-        print('\n'.join(get_pretty_lines(sentences)))
+        print('\n'.join(split_sentences_to_lines(sentences, 1)))
 
         print('\nBottom %d matches:' % bottom_k)
         sentences = [match['sentence_text'] for match in bottom_k_matches]
-        print('\n'.join(get_pretty_lines(sentences)))
+        print('\n'.join(split_sentences_to_lines(sentences, 1)))
         break
 
 def compare_results(result_1, title_1, result_2, title_2):
