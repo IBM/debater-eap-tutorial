@@ -127,3 +127,14 @@ def compare_results(result_1, title_1, result_2, title_2):
         table.add_row([kp, '---', kps2_n_args[kp], '---'])
     print('%s - %s comparison:' % (title_1, title_2))
     print(table)
+
+def init_logger():
+    from logging import getLogger, getLevelName, Formatter, StreamHandler
+    log = getLogger()
+    log.setLevel(getLevelName('INFO'))
+    log_formatter = Formatter("%(asctime)s [%(levelname)s] %(filename)s %(lineno)d: %(message)s")
+
+    console_handler = StreamHandler()
+    console_handler.setFormatter(log_formatter)
+    log.handlers = []
+    log.addHandler(console_handler)
