@@ -138,3 +138,15 @@ def init_logger():
     console_handler.setFormatter(log_formatter)
     log.handlers = []
     log.addHandler(console_handler)
+
+
+def print_top_and_bottom_k_sentences(sentences, k):
+    top_sentences = sentences[:k]
+    top_sentences = [sentence['text'] for sentence in top_sentences]
+    print('Top %d quality sentences: ' % k)
+    print('\n'.join(split_sentences_to_lines(top_sentences, 1)))
+
+    bottom_sentences = sentences[-k:]
+    bottom_sentences = [sentence['text'] for sentence in bottom_sentences]
+    print('\n\nBottom %d quality sentences: ' % k)
+    print('\n'.join(split_sentences_to_lines(bottom_sentences, 1)))
