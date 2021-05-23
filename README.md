@@ -29,10 +29,13 @@ Clone the tutrial repository:
 `git clone https://github.com/IBM/debater-eap-tutorial.git`
 
 Install requirements
+
 `cd debater-eap-tutorial`
+
 `pip install -r requirements.txt`
 
 Run Jupyter notebook. replace the APIKEY with your APIKEY. You can get your APIKEY by clicking the tab API_KEY at the upper bar. 
+
 `env DEBATER_API_KEY=APIKEY jupyter notebook`
 
 Open the tutorial (e.g. click `survey usecase` and the `austin_demo.ipynb`).
