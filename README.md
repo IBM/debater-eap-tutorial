@@ -12,7 +12,7 @@ Create a conda env:
 `conda create --name <name> python=3.7`
 
 Activate env:
-conda activate <name>
+`conda activate <name>`
 
 Get credentials for the Early Access Program site by sending an email to:
 project.debater@il.ibm.com
@@ -26,13 +26,13 @@ https://early-access-program.debater.res.ibm.com/download_sdk.html
 ## Run the tutorial
 
 Clone the tutrial repository:
-git clone https://github.com/IBM/debater-eap-tutorial.git
+`git clone https://github.com/IBM/debater-eap-tutorial.git`
 
 Install requirements
-cd debater-eap-tutorial
-pip install -r requirements.txt
+`cd debater-eap-tutorial`
+`pip install -r requirements.txt`
 
 Run Jupyter notebook. replace the APIKEY with your APIKEY. You can get your APIKEY by clicking the tab API_KEY at the upper bar. 
-env DEBATER_API_KEY=APIKEY jupyter notebook
+`env DEBATER_API_KEY=APIKEY jupyter notebook`
 
 Open the tutorial (e.g. click `survey usecase` and the `austin_demo.ipynb`).
