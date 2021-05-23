@@ -28,7 +28,7 @@ https://early-access-program.debater.res.ibm.com/download_sdk.html
 Clone the tutrial repository:
 `git clone https://github.com/IBM/debater-eap-tutorial.git`
 
-Install requirements
+Install requirements:
 
 `cd debater-eap-tutorial`
 
