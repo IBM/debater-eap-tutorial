@@ -35,7 +35,7 @@ https://early-access-program.debater.res.ibm.com/
 https://early-access-program.debater.res.ibm.com/download_sdk.html
   
 * To check that the environment is set correctly, try running a code example, e.g.:
-https://early-access-program.debater.res.ibm.com/#keypoint
+https://early-access-program.debater.res.ibm.com/#keypoints
 
 * Get the API-KEY from the site:
 ![Image of get api_key](./tabs.png)
@@ -52,6 +52,11 @@ https://early-access-program.debater.res.ibm.com/#keypoint
 
 * Run Jupyter Notebook (use the api-key from the site):<br />
 `env DEBATER_API_KEY=APIKEY_PLACE_HOLDER jupyter notebook`
+
+* To check that the environment is set correctly, try running notebook `hello_world/hello_world.ipynb`.
+
 * Open `survey_usecase/austin_demo.ipynb` notebook for a simple hands-on tutorial or `survey_usecase/austin_demo_with_answers.ipynb` for a runnable version.  
+
 * The tutorial is self-explanatory, please follow the instructions and explanations.
+
 * Feel free to contact us if you face problems or have questions at: <br />`project.debater@il.ibm.com`
