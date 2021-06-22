@@ -1,8 +1,10 @@
 import math
+from collections import defaultdict
 
 from prettytable import PrettyTable
 
 MAX_LINE_LENGTH = 90
+
 
 def split_sentence_to_lines(sentence, max_len):
     if len(sentence) <= max_len:
@@ -53,31 +55,55 @@ def print_results_in_a_table(result, n_sentences_per_kp, title, one_line_sentenc
     print(table)
 
 
-def print_results(result, n_sentences_per_kp, title, one_line_sentences_only=False):
+def print_results(result, n_sentences_per_kp, title):
+    '''
+    Prints the key point analysis result to console.
+    :param result: the result, returned by method get_result in KpAnalysisTaskFuture.
+    '''
+    def print_kp(kp, n_matches, n_matches_subtree, depth, keypoint_matching, n_sentences_per_kp):
+        has_n_matches_subtree = n_matches_subtree is not None
+        print('%s%d%s - %s' % (('\t' * depth), n_matches_subtree if has_n_matches_subtree else n_matches,
+                                   (' - %d' % n_matches) if has_n_matches_subtree else '', kp))
+        sentences = [match['sentence_text'] for match in keypoint_matching['matching']]
+        sentences = sentences[1:(n_sentences_per_kp + 1)]  # first sentence is the kp itself
+        lines = split_sentences_to_lines(sentences, depth)
+        for line in lines:
+            print('\t%s' % line)
+
+    kp_to_n_matches_subtree = defaultdict(int)
+    parents = list()
+    parent_to_kids = defaultdict(list)
+    for keypoint_matching in result['keypoint_matchings']:
+        kp = keypoint_matching['keypoint']
+        kp_to_n_matches_subtree[kp] += len(keypoint_matching['matching'])
+        parent = keypoint_matching.get("parent", None)
+        if parent is None or parent == 'root':
+            parents.append(keypoint_matching)
+        else:
+            parent_to_kids[parent].append(keypoint_matching)
+            kp_to_n_matches_subtree[parent] += len(keypoint_matching['matching'])
+
+    parents.sort(key=lambda x: kp_to_n_matches_subtree[x['keypoint']], reverse=True)
+
     total_sentences = 0
     matched_sentences = 0
-    lines = []
     for i, keypoint_matching in enumerate(result['keypoint_matchings']):
-        kp = keypoint_matching['keypoint']
         matches = keypoint_matching['matching']
         total_sentences += len(matches)
-        if keypoint_matching['keypoint'] == 'none':  # skip cluster of all unmatched sentences
-            continue
+        if keypoint_matching['keypoint'] != 'none':  # skip cluster of all unmatched sentences
+            matched_sentences += len(matches)
 
-        matched_sentences += len(matches)
-        if len(matches) <= 1:
-            continue
-
-        lines.append('{} - {}'.format(len(matches), kp))
-
-        sentences = [match['sentence_text'] for match in matches]
-        if one_line_sentences_only:
-            sentences = [sentence for sentence in sentences if len(sentence) <= MAX_LINE_LENGTH]
-        sentences = sentences[1:(n_sentences_per_kp + 1)]  # first sentence is the kp itself
-        lines.extend(split_sentences_to_lines(sentences, 1))
     print(title + ' coverage: %.2f' % ((float(matched_sentences) / float(total_sentences)) * 100.0))
     print(title + ' key points:')
-    print('\n'.join(lines))
+    for parent in parents:
+        kp = parent['keypoint']
+        if kp == 'none':
+            continue
+        print_kp(kp, len(parent['matching']), None if len(parent_to_kids[kp]) == 0 else kp_to_n_matches_subtree[kp], 0, parent, n_sentences_per_kp)
+        for kid in parent_to_kids[kp]:
+            kid_kp = kid['keypoint']
+            print_kp(kid_kp, len(kid['matching']), None, 1, kid, n_sentences_per_kp)
+
 
 def split_sentences_to_lines(sentences, n_tabs):
     lines = []
@@ -85,24 +111,21 @@ def split_sentences_to_lines(sentences, n_tabs):
         lines.extend(split_sentence_to_lines(sentence, MAX_LINE_LENGTH))
     return [('\t' * n_tabs) + line for line in lines]
 
-def print_top_and_bottom_matches_for_kp(result, kp_to_print, top_k, bottom_k):
-    for i, keypoint_matching in enumerate(result['keypoint_matchings']):
+
+def print_bottom_matches_for_kp(result, kp_to_print, bottom_k):
+    for keypoint_matching in result['keypoint_matchings']:
         kp = keypoint_matching['keypoint']
         if kp != kp_to_print:
             continue
 
         matches = keypoint_matching['matching']
-        top_k_matches = matches[:top_k]
         bottom_k_matches = matches[-bottom_k:]
-
-        print('Top %d matches:' % top_k)
-        sentences = [match['sentence_text'] for match in top_k_matches]
-        print('\n'.join(split_sentences_to_lines(sentences, 1)))
 
         print('\nBottom %d matches:' % bottom_k)
         sentences = [match['sentence_text'] for match in bottom_k_matches]
         print('\n'.join(split_sentences_to_lines(sentences, 1)))
         break
+
 
 def compare_results(result_1, title_1, result_2, title_2):
     kps1 = set([kp['keypoint'] for kp in result_1['keypoint_matchings'] if kp['keypoint'] != 'none'])
@@ -127,6 +150,7 @@ def compare_results(result_1, title_1, result_2, title_2):
         table.add_row([kp, '---', kps2_n_args[kp], '---'])
     print('%s - %s comparison:' % (title_1, title_2))
     print(table)
+
 
 def init_logger():
     from logging import getLogger, getLevelName, Formatter, StreamHandler
