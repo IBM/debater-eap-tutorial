@@ -60,10 +60,11 @@ def print_results(result, n_sentences_per_kp, title):
     Prints the key point analysis result to console.
     :param result: the result, returned by method get_result in KpAnalysisTaskFuture.
     '''
-    def print_kp(kp, n_matches, n_matches_subtree, depth, keypoint_matching, n_sentences_per_kp):
+    def print_kp(kp, stance, n_matches, n_matches_subtree, depth, keypoint_matching, n_sentences_per_kp):
         has_n_matches_subtree = n_matches_subtree is not None
-        print('%s%d%s - %s' % (('\t' * depth), n_matches_subtree if has_n_matches_subtree else n_matches,
-                                   (' - %d' % n_matches) if has_n_matches_subtree else '', kp))
+        print('%s%d%s - %s%s' % (('\t' * depth), n_matches_subtree if has_n_matches_subtree else n_matches,
+                                   (' - %d' % n_matches) if has_n_matches_subtree else '', kp,
+                                 '' if stance is None else ' - ' + stance))
         sentences = [match['sentence_text'] for match in keypoint_matching['matching']]
         sentences = sentences[1:(n_sentences_per_kp + 1)]  # first sentence is the kp itself
         lines = split_sentences_to_lines(sentences, depth)
@@ -97,12 +98,14 @@ def print_results(result, n_sentences_per_kp, title):
     print(title + ' key points:')
     for parent in parents:
         kp = parent['keypoint']
+        stance = None if 'stance' not in parent else parent['stance']
         if kp == 'none':
             continue
-        print_kp(kp, len(parent['matching']), None if len(parent_to_kids[kp]) == 0 else kp_to_n_matches_subtree[kp], 0, parent, n_sentences_per_kp)
+        print_kp(kp, stance, len(parent['matching']), None if len(parent_to_kids[kp]) == 0 else kp_to_n_matches_subtree[kp], 0, parent, n_sentences_per_kp)
         for kid in parent_to_kids[kp]:
             kid_kp = kid['keypoint']
-            print_kp(kid_kp, len(kid['matching']), None, 1, kid, n_sentences_per_kp)
+            kid_stance = None if 'stance' not in kid else kid['stance']
+            print_kp(kid_kp, kid_stance, len(kid['matching']), None, 1, kid, n_sentences_per_kp)
 
 
 def split_sentences_to_lines(sentences, n_tabs):
