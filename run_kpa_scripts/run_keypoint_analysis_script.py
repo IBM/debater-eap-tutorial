@@ -1,3 +1,5 @@
+# (c) Copyright IBM Corporation 2020-2022
+
 import logging
 
 from debater_python_api.api.clients.keypoints_client import KpAnalysisTaskFuture, \
