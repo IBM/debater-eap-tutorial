@@ -44,7 +44,6 @@ if __name__ == '__main__':
 
     debater_api = DebaterApi(apikey=api_key)
     keypoints_client = KpAnalysisClient(apikey=api_key, host=host)
-    keypoints_client.delete_all_domains_cannot_be_undone()
 
     # what to run
     delete_all_domains = False  # deletes-all! cannot be undone
