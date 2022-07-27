@@ -53,7 +53,7 @@ if __name__ == '__main__':
     upload_comments = restart
     run_kpa = False
     download_sentences = False
-    get_report = True
+    get_report = False
     connect_to_running_job = False
     cancel_all_running_jobs_in_the_domain = False
 
