@@ -72,7 +72,7 @@ if __name__ == '__main__':
     if delete_domain:
         answer = input(f'Are you sure you want to delete domain: {domain} (cannot be undone)? yes/no:')
         if answer == 'yes':
-            keypoints_client.delete_domain_cannot_be_undone(domain)
+            KpAnalysisUtils.delete_domain_ignore_doesnt_exist(keypoints_client, domain)
 
     if create_domain:
         try:
