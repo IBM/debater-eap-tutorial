@@ -75,11 +75,7 @@ if __name__ == '__main__':
             KpAnalysisUtils.delete_domain_ignore_doesnt_exist(keypoints_client, domain)
 
     if create_domain:
-        try:
-            keypoints_client.create_domain(domain, {})
-            print('domain was created')
-        except KpaIllegalInputException as e:
-            print('domain already exist')
+        KpAnalysisUtils.create_domain_ignore_exists(keypoints_client, domain, {})
 
     if upload_comments:
         comments_ids, comments_texts = get_comments_ids_and_texts(file, comment_ids_column, comment_text_column)
