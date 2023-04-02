@@ -4,8 +4,8 @@
 
 import logging
 
-from debater_python_api.api.clients.keypoints_client import KpAnalysisTaskFuture, \
-    KpaIllegalInputException, KpAnalysisUtils, KpAnalysisClient
+from debater_python_api.api.clients.key_point_analysis.KpAnalysisUtils import KpAnalysisUtils
+from debater_python_api.api.clients.keypoints_client import KpAnalysisTaskFuture, KpAnalysisClient
 from debater_python_api.api.debater_api import DebaterApi
 import pandas as pd
 

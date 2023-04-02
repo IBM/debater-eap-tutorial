@@ -3,9 +3,9 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 import logging
-
+from debater_python_api.api.clients.key_point_analysis.KpAnalysisUtils import KpAnalysisUtils
 from debater_python_api.api.clients.keypoints_client import KpAnalysisTaskFuture, \
-    KpaIllegalInputException, KpAnalysisUtils, KpAnalysisClient
+    KpaIllegalInputException, KpAnalysisClient
 import pandas as pd
 
 def write_sentences_to_csv(sentences, out_file):
