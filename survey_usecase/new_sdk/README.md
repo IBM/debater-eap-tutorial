@@ -1,8 +1,8 @@
-# Key Point Analysis (KPS) tutorials
+# Key Point Summarization (KPS) tutorials
 ## Introduction
 When you have a large collection of texts representing people’s opinions (such as product reviews, survey answers or posts from social media), it is difficult to understand the key issues that come up in the data. Going over thousands of comments is prohibitively expensive. Existing automated approaches are often limited to identifying recurring phrases or concepts and the overall sentiment toward them, but do not provide detailed or actionable insights.
 
-In this tutorial you will gain hands-on experience in using KPS for analyzing and deriving insights from open-ended answers. The data we will use is a community survey conducted in the city of Austin in the years 2016 and 2017.
+In this tutorial you will gain hands-on experience in using Key Point Summarization for analyzing and deriving insights from open-ended answers. The data we will use is a community survey conducted in the city of Austin in the years 2016 and 2017.
 
 ## Prerequisites
 To follow this tutorial, you first need to receive credentials for KPS APIs by sending a request email to: `yoavka@il.ibm.com`
