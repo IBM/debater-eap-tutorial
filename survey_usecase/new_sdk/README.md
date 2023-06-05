@@ -2,7 +2,7 @@
 ## Introduction
 When you have a large collection of texts representing people’s opinions (such as product reviews, survey answers or posts from social media), it is difficult to understand the key issues that come up in the data. Going over thousands of comments is prohibitively expensive. Existing automated approaches are often limited to identifying recurring phrases or concepts and the overall sentiment toward them, but do not provide detailed or actionable insights.
 
-In this tutorial you will gain hands-on experience in using KPS for analyzing and deriving insights from open-ended answers. The data we will use is a community survey conducted in the city of Austin in the years 2016 and 2017. We will analyze their open-ended answers in different ways by using four Debater services, the Argument Quality service, the Key Point Analysis service, the Term Wikifier service and the Term Relater service, and we will see how they can be combined into a powerful text analysis tool.
+In this tutorial you will gain hands-on experience in using KPS for analyzing and deriving insights from open-ended answers. The data we will use is a community survey conducted in the city of Austin in the years 2016 and 2017.
 
 ## Prerequisites
 To follow this tutorial, you first need to receive credentials for KPS APIs by sending a request email to: `yoavka@il.ibm.com`
