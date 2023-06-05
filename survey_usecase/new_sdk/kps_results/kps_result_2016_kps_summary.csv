@@ -1,0 +1,67 @@
+key_point,#comments,comments_coverage,#sentences,sentences_coverage,stance,kp_id,parent_id,n_comments_subtree
+Improve traffic flow.,169,0.169,185,0.10204081632653061,con,0,,220
+We really need to improve our public transportation.,153,0.153,167,0.09211252068394926,con,1,,153
+Improve affordable housing/living.,127,0.127,150,0.0827357970215113,con,2,,154
+PROPERTY TAXES ARE TOO HIGH.,83,0.083,96,0.052950910093767234,con,3,,110
+Please plan better for growth on our roadways!,78,0.078,85,0.04688361831218974,con,4,0,78
+Buying a home in S Austin is prohibitive.,56,0.056,62,0.03419746276889134,con,5,2,56
+driving in Austin is terrible,47,0.047,51,0.028130170987313845,con,6,0,47
+Water costs too much.,44,0.044,50,0.027578599007170437,con,7,3,52
+Don't let Austin become Houston with overdevelopment.,35,0.035,36,0.019856591285162713,con,10,,35
+Better pedestrian and biking lifestyle options.,34,0.034,36,0.019856591285162713,con,9,,34
+STOP WASTING MONEY.,33,0.033,41,0.022614451185879757,con,8,,33
+Stop the gentrification.,32,0.032,36,0.019856591285162713,con,11,2,32
+electric rates are too high,28,0.028,30,0.01654715940430226,con,12,7,28
+FOCUS ON SUSTAINABILITY INSTEAD OF GROWTH.,26,0.026,26,0.014340871483728626,con,13,,26
+Make utility changes more affordable for seniors.,24,0.024,25,0.013789299503585218,con,14,2,24
+THE HOMELESS POPULATION NEEDS MORE HELP/ATTENTION,22,0.022,23,0.0126861555432984,con,15,,32
+Clean up the homeless population downtown!,20,0.02,22,0.012134583563154992,con,16,15,20
+Fewer bicycles for safer roads.,18,0.018,18,0.009928295642581356,con,17,,18
+City Council members should represent all citizens.,16,0.016,17,0.009376723662437948,con,20,,16
+INCREASE POLICE FORCE.,16,0.016,17,0.009376723662437948,con,19,,16
+The permitting process has got to improve.,15,0.015,18,0.009928295642581356,con,18,,15
+PLEASE MORE PARKING SPACES.,14,0.014,16,0.00882515168229454,con,21,,14
+We need more street lights.,14,0.014,16,0.00882515168229454,con,22,,14
+CITY IS REGULATING FAR TOO MUCH.,14,0.014,15,0.00827357970215113,con,23,,14
+Quit adding bike lanes on roads,14,0.014,14,0.007722007722007722,con,24,,14
+Code issues are hurting the city.,13,0.013,13,0.007170435741864313,con,26,,13
+WE NEED BETTER FLOOD PLANNING.,13,0.013,13,0.007170435741864313,con,25,,13
+WE ARE WAY TOO CAR DEPENDENT.,11,0.011,12,0.006618863761720904,con,28,1,11
+Please keep grass mowed along sidewalks.,10,0.01,13,0.007170435741864313,con,27,,10
+Focus on efficient solutions.,9,0.009,9,0.004964147821290678,con,31,,9
+"Help our public schools, please.",9,0.009,9,0.004964147821290678,con,30,,9
+I think you're doing a great job!,8,0.008,8,0.00441257584114727,pro,36,,8
+Austin needs fields for sports!,8,0.008,8,0.00441257584114727,con,34,,8
+Growth needs to pay for itself.,8,0.008,8,0.00441257584114727,con,35,,8
+More transparency about usage of tax money.,7,0.007,11,0.006067291781577496,con,29,,7
+Please increase curbside recycling services pickup frequency.,7,0.007,8,0.00441257584114727,con,32,,7
+Respect efforts for historic districts.,7,0.007,8,0.00441257584114727,con,33,,7
+Make our buses a desirable form of transportation.,7,0.007,7,0.003861003861003861,con,38,1,7
+The police are too reactive and authoritarian.,6,0.006,7,0.003861003861003861,con,37,,6
+Hotel room prices are outrageous on weekends.,6,0.006,6,0.003309431880860452,con,39,,6
+I don't feel safe going to work!,6,0.006,6,0.003309431880860452,con,40,,6
+More programs for senior citizens.,6,0.006,6,0.003309431880860452,con,41,,6
+"City services (water, streets, electric) are outstanding!!",5,0.005,5,0.0027578599007170436,pro,45,,5
+Embrace growth and innovation!,5,0.005,5,0.0027578599007170436,con,43,,5
+Glad Marc Ott is leaving - incompetent.,5,0.005,5,0.0027578599007170436,con,47,,5
+Police response time in unacceptably slow.,5,0.005,5,0.0027578599007170436,con,46,,5
+Stop sanctuary city program!,5,0.005,5,0.0027578599007170436,con,44,,5
+We need more schools in northwest Austin.,4,0.004,5,0.0027578599007170436,con,42,,4
+Keep up the good work!,4,0.004,4,0.002206287920573635,pro,48,,4
+This holds up traffic tremendously.,4,0.004,4,0.002206287920573635,pro,53,,4
+Better training for the 3-1-1 operators.,4,0.004,4,0.002206287920573635,con,50,,4
+Please make decisions on economics not political correctness.,4,0.004,4,0.002206287920573635,con,49,,4
+Protect local businesses.,4,0.004,4,0.002206287920573635,con,51,,4
+More enforcement of residential watering violations.,3,0.003,4,0.002206287920573635,con,52,,3
+Keep it up!,3,0.003,3,0.001654715940430226,pro,54,,3
+Educate public against panhandlers.,3,0.003,3,0.001654715940430226,con,57,,3
+"Please ""un-gerrymander"" our election districts.",3,0.003,3,0.001654715940430226,con,55,,3
+Take a long term view.,3,0.003,3,0.001654715940430226,con,56,,3
+Need better information for bike commuting from suburbs.,2,0.002,2,0.0011031439602868175,con,59,,2
+The science does not support the current subsidies.,2,0.002,2,0.0011031439602868175,con,58,,2
+*total_pro,78,0.078,101,0.05570876999448428,,,,
+*matched_pro,21,0.021,22,0.012134583563154992,,,,
+*total_con,881,0.881,1450,0.7997793712079426,,,,
+*matched_con,655,0.655,898,0.49531163816878104,,,,
+*total,1000,1.0,1813,1.0,,,,
+*matched,668,0.668,920,0.507446221731936,,,,
