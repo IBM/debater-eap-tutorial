@@ -23,11 +23,9 @@ In order to run the tutorials, you need an Python Anaconda environment with the 
 
 * Install KPS's Python SDK:<br />
 `pip install debater-python-api`
-https://pypi.org/project/debater-python-api/
 
 * Install Jupyter Notebook:<br />
 `pip install notebook`
-https://pypi.org/project/debater-python-api/
 
 * Get an API key for KPS by sending an email to:<br />
 `yoavka@il.ibm.com`
@@ -42,7 +40,7 @@ https://pypi.org/project/debater-python-api/
 `env KPS_API_KEY=<API_KEY> jupyter notebook`
 
 
-* Open `survey_usecase/kpa_quick_start_tutorial.ipynb` notebook for a simple quick-start tutorial or `survey_usecase/kpa_quick_start_tutorial-with_results.ipynb` for a version with results.
+* Open [kpa_quick_start_tutorial.ipynb](kpa_quick_start_tutorial.ipynb) notebook for a simple quick-start tutorial or [kpa_quick_start_tutorial-with_results.ipynb](kpa_quick_start_tutorial-with_results.ipynb) for a version with results.
 
 * The tutorial is self-explanatory, and demonstrates how to use Key Point Summarization and its key features.
 
