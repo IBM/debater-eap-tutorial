@@ -6,7 +6,7 @@ In this tutorial you will gain hands-on experience in using Key Point Summarizat
 
 ## Prerequisites
 To follow this tutorial, you first need to receive credentials for KPS APIs by sending a request email to: `yoavka@il.ibm.com`
-We also assume you have conda package managment system (https://docs.conda.io/en/latest/) available and basic knowladge in Python.
+We also assume you have conda package managment system (https://docs.conda.io/en/latest/) available and basic knowledge in Python.
 
 
 ## Estimated time
