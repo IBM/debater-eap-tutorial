@@ -5,7 +5,7 @@ When you have a large collection of texts representing people’s opinions (such
 In this tutorial you will gain hands-on experience in using Key Point Summarization for analyzing and deriving insights from open-ended answers. The data we will use is a community survey conducted in the city of Austin in the years 2016 and 2017.
 
 ## Prerequisites
-To follow this tutorial, you first need to receive credentials for KPS APIs by sending a request email to: `yoavka@il.ibm.com`
+To follow this tutorial, you first need to receive credentials for KPS APIs by sending a request email to: `project.debater@il.ibm.com`
 We also assume you have conda package managment system (https://docs.conda.io/en/latest/) available and basic knowledge in Python.
 
 
@@ -44,4 +44,4 @@ In order to run the tutorials, you need an Python Anaconda environment with the 
 
 * The tutorial is self-explanatory, and demonstrates how to use Key Point Summarization and its key features.
 
-* Feel free to contact us if you face problems or have questions at: <br />`yoavka@il.ibm.com`
+* Feel free to contact us if you face problems or have questions at: <br />`project.debater@il.ibm.com`
