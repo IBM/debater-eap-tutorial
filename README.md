@@ -55,7 +55,7 @@ https://early-access-program.debater.res.ibm.com/#keypoints
 
 * To check that the environment is set correctly, try running notebook `hello_world/hello_world.ipynb`.
 
-* Open `survey_usecase/kpa_quick_start_tutorial.ipynb` notebook for a simple quick-start tutorial or `survey_usecase/kpa_quick_start_tutorial-with_results.ipynb` for a version with results.
+* Open `survey_usecase/new_sdk/kpa_quick_start_tutorial.ipynb` notebook for a simple quick-start tutorial or `survey_usecase/new_sdk/kpa_quick_start_tutorial-with_results.ipynb` for a version with results.
 
 * The tutorial is self-explanatory, and demonstrates how to use Key Point Analysis and its key features.
 
