@@ -28,7 +28,7 @@ In order to run the tutorials, you need an Python Anaconda environment with the 
 `pip install notebook`
 
 * Get an API key for KPS by sending an email to:<br />
-`yoavka@il.ibm.com`
+`project.debater@il.ibm.com`
 
 
 ## Run the tutorial
